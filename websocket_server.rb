@@ -1,4 +1,5 @@
 require 'websocket-eventmachine-server'
+require_relative 'services/music_request'
 
 class WebSocketServer
     def start
@@ -7,6 +8,7 @@ class WebSocketServer
               ws.onmessage do |msg, type|
                 puts "Received message: #{msg}"
                 ws.send msg, :type => type
+                MusicRequest.new(msg)
               end
             end
         end

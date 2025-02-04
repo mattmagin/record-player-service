@@ -16,23 +16,23 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_04_064543) do
 
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
-  create_enum "spotify_type", ["track", "album", "artist", "playlist"]
+  create_enum "record_type", ["track", "album", "artist", "playlist"]
 
   create_table "sonos_rooms", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "spotify_ids", force: :cascade do |t|
-    t.string "spotify_id"
-    t.enum "spotify_type", null: false, enum_type: "spotify_type"
+  create_table "spotify_records", force: :cascade do |t|
+    t.string "uri"
+    t.enum "record_type", null: false, enum_type: "record_type"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "tag_code"
     t.integer "identifier"
-    t.bigint "spotify_id_id"
-    t.index ["spotify_id_id"], name: "index_tags_on_spotify_id_id"
+    t.bigint "spotify_record_id"
+    t.index ["spotify_record_id"], name: "index_tags_on_spotify_record_id"
   end
 
-  add_foreign_key "tags", "spotify_ids"
+  add_foreign_key "tags", "spotify_records"
 end
