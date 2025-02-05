@@ -139,7 +139,7 @@ DEPENDENCIES
   dotenv
   fiddle
   pg
-  pycall
+  pycall (~> 1.5.2)
   rake
   redis
   securerandom (= 0.4.1)

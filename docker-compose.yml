@@ -1,0 +1,15 @@
+version: '3'
+services:
+  record-player-server:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

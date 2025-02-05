@@ -11,4 +11,4 @@ gem 'standalone_migrations'
 
 gem 'securerandom', '0.4.1'
 gem 'fiddle'
-gem 'pycall'
+gem 'pycall', '~> 1.5.2'
