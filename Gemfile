@@ -10,5 +10,5 @@ gem 'rake'
 gem 'standalone_migrations'
 
 gem 'securerandom', '0.4.1'
-
-gem 'sonos'
+gem 'fiddle'
+gem 'pycall'

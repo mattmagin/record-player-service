@@ -36,12 +36,6 @@ GEM
       mutex_m
       securerandom (>= 0.3)
       tzinfo (~> 2.0)
-    addressable (2.8.7)
-      public_suffix (>= 2.0.2, < 7.0)
-    akami (1.3.3)
-      base64
-      gyoku (>= 0.4.0)
-      nokogiri
     base64 (0.2.0)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
@@ -54,21 +48,7 @@ GEM
     drb (2.2.1)
     erubi (1.13.1)
     eventmachine (1.2.7)
-    faraday (2.12.2)
-      faraday-net_http (>= 2.0, < 3.5)
-      json
-      logger
-    faraday-net_http (3.4.0)
-      net-http (>= 0.5.0)
-    gyoku (1.4.0)
-      builder (>= 2.1.2)
-      rexml (~> 3.0)
-    httpclient (2.8.3)
-    httpi (4.0.4)
-      base64
-      mutex_m
-      nkf
-      rack (>= 2.0, < 4)
+    fiddle (1.1.6)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -76,39 +56,18 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.9.1)
     logger (1.6.5)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    mail (2.8.1)
-      mini_mime (>= 0.1.1)
-      net-imap
-      net-pop
-      net-smtp
-    mini_mime (1.1.5)
     mini_portile2 (2.8.8)
     minitest (5.25.4)
     mutex_m (0.3.0)
-    net-http (0.6.0)
-      uri
-    net-imap (0.5.5)
-      date
-      net-protocol
-    net-pop (0.1.2)
-      net-protocol
-    net-protocol (0.2.2)
-      timeout
-    net-smtp (0.5.0)
-      net-protocol
-    nkf (0.2.0)
     nokogiri (1.18.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     nokogiri (1.18.2-x86_64-linux-gnu)
       racc (~> 1.4)
-    nori (2.7.1)
-      bigdecimal
     pg (1.5.9)
     pp (0.6.2)
       prettyprint
@@ -116,7 +75,7 @@ GEM
     psych (5.2.3)
       date
       stringio
-    public_suffix (6.0.1)
+    pycall (1.5.2)
     racc (1.8.1)
     rack (3.1.9)
     rack-session (2.1.0)
@@ -150,22 +109,7 @@ GEM
       connection_pool
     reline (0.6.0)
       io-console (~> 0.5)
-    rexml (3.4.0)
-    savon (2.15.1)
-      akami (~> 1.2)
-      builder (>= 2.1.2)
-      gyoku (~> 1.2)
-      httpi (>= 4, < 5)
-      mail (~> 2.5)
-      nokogiri (>= 1.8.1)
-      nori (~> 2.4)
-      wasabi (>= 3.7, < 6)
     securerandom (0.4.1)
-    sonos (0.3.6)
-      httpclient
-      nokogiri
-      savon (~> 2.0)
-      thor
     standalone_migrations (8.0.0)
       activerecord (>= 6.0.0, < 8.1)
       nokogiri (~> 1.14)
@@ -176,11 +120,6 @@ GEM
     timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uri (1.0.2)
-    wasabi (5.1.0)
-      addressable
-      faraday (>= 1.9, < 3)
-      nokogiri (>= 1.13.9)
     websocket (1.2.11)
     websocket-eventmachine-base (1.2.0)
       eventmachine (~> 1.0)
@@ -198,11 +137,12 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   dotenv
+  fiddle
   pg
+  pycall
   rake
   redis
   securerandom (= 0.4.1)
-  sonos
   standalone_migrations
   websocket-eventmachine-server
 

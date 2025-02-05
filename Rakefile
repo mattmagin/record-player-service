@@ -1,4 +1,4 @@
 require 'standalone_migrations'
-require_relative 'db/database'
+require_relative 'app/db/database'
 
 StandaloneMigrations::Tasks.load_tasks
