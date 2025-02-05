@@ -14,6 +14,8 @@ ENV PYTHON=/usr/bin/python3
 RUN pip3 install soco --break-system-packages
 RUN pip3 install requests --break-system-packages
 
+WORKDIR /app
+
 # Copy Gemfile and Gemfile.lock first to leverage Docker caching
 COPY Gemfile Gemfile.lock ./
 
