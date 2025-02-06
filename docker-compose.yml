@@ -1,21 +1,10 @@
 version: '3'
 services:
-  # postgres:
-  #   image: postgres:latest
-  #   ports:
-  #     - 5432:5432
-  #   volumes:
-  #     - /apps/postgres:/var/lib/postgresql/data
-  #   restart: unless-stopped
-  #   environment:
-  #     - POSTGRES_PASSWORD=password123
-  #     - POSTGRES_USER=admin
-  #     - POSTGRES_DB=record-player-service-db
   record-player-server:
     build: .
     image: record-player-service:latest
     volumes:
-      - .:/app
+      - .:/service
     ports:
       - "3000:3000"
     restart: unless-stopped
