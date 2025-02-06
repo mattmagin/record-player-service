@@ -5,12 +5,5 @@ services:
     image: record-player-service:latest
     volumes:
       - .:/service
-    ports:
-      - "3000:3000"
     restart: unless-stopped
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+    network_mode: host
