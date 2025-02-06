@@ -12,7 +12,7 @@ ENV['ENV'] ||= 'development'
 # Load database configuration
 db_config_file = File.join(File.dirname(__FILE__), 'config.yml')
 db_config = YAML.load(ERB.new(File.read(db_config_file)).result, aliases: true)
-
+puts db_config
 # Establish database connection
 ActiveRecord::Base.establish_connection(db_config[ENV['ENV']])
 
